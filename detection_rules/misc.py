@@ -334,7 +334,7 @@ def get_kibana_client(cloud_id, kibana_url, kibana_user, kibana_password, kibana
 
     verify = not ignore_ssl_errors
 
-    with Kibana(cloud_id=cloud_id, kibana_url=kibana_url, space=space, verify=verify, **kwargs) as kibana:
+    with Kibana(cloud_id=cloud_id, kibana_url=kibana_url, space=space, verify=False, **kwargs) as kibana:
         if kibana_cookie:
             kibana.add_cookie(kibana_cookie)
             return kibana
